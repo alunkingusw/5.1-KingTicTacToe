@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject private var gameManager: GameManager
+    @StateObject var gameManager = GameManager()
     var body: some View {
         VStack (spacing: -2.0){
             ForEach(0 ..< 3) { rowNo in
@@ -34,6 +34,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(GameManager())
+        ContentView()
     }
 }
